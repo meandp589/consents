@@ -76,8 +76,10 @@ var consentUrl = 'https://www.cookie.makewell.co.th'
 
 !(function () {
 
-    document.head.innerHTML =  document.head.innerHTML +  ' <style> ' + css + ' </style>'
-    document.body.innerHTML =  document.body.innerHTML + html
+    document.head.innerHTML += ' <style> ' + css + ' </style>'
+    var div = document.createElement('div');
+    div.innerHTML = html;
+    document.body.appendChild(div);
 
     const dataKey = document.currentScript.getAttribute('data-key');
     if(dataKey) {
@@ -96,7 +98,6 @@ var consentUrl = 'https://www.cookie.makewell.co.th'
         } else {
             divMain.style.display = "block";
         }
-
 
         let goConsent = {
             "consent":[
