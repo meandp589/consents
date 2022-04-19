@@ -76,8 +76,8 @@ var consentUrl = 'https://www.cookie.makewell.co.th'
 
 !(function () {
 
-    document.head.innerHTML = ' <style> ' + css + ' </style>'
-    document.body.innerHTML = html
+    document.head.innerHTML =  document.head.innerHTML +  ' <style> ' + css + ' </style>'
+    document.body.innerHTML =  document.body.innerHTML + html
 
     const dataKey = document.currentScript.getAttribute('data-key');
     if(dataKey) {
