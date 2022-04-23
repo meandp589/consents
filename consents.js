@@ -1,81 +1,9 @@
-var html = `<div class="cookie-go-main" id="cookie-go" style="display: none;">
-<div class="cookie-go-position" style="transform: translateY(0px);">
-    <div class="cookie-go-border">
-        <div class="cookie-go-content">
-            <div>
-                <div class="cookie-go-font-bold">We use cookies</div>
-                <div>We use cookies to improve your experience and performance on our website. You can manage your preferences by clicking "Change Preferences".</div>
-                <div class="cookie-go-float-right">
-                    <a id="cookie-go-consent" href="#" style="margin-right: 10px" class="cookie-go-font-bold cookie-go-link-blue">Change Preferences</a>
-                    <button id="cookie-go-accept-all-main" type="button" class="cookie-go-btn cookie-go-btn-primary cookie-go-font-bold">Accept All</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="cookie-go-modal cookie-go-fade" style="display: none;" id="cookie-go-privacy" tabindex="-1" role="dialog" aria-labelledby="privacyLabel" aria-hidden="true">
-    <div class="cookie-go-modal-dialog cookie-go-modal-lg" role="document">
-        <div class="cookie-go-modal-content">
-            <div class="cookie-go-modal-header" style="padding-bottom: 10px;">
-                <div class="cookie-go-modal-title cookie-go-mt-2">
-                    <span class="cookie-go-h5 cookie-go-font-bold">Privacy Preference  <button type="button" id="cookie-go-accept-all" class="cookie-go-btn cookie-go-btn-primary cookie-go-ml-3 font-bold">Accept All</button></span>
-                </div>
-                <button type="button" class="cookie-go-close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="cookie-go-modal-body">
-                <div class="cookie-go-card">
-                    <ul class="cookie-go-list-group cookie-go-list-group-flush cookie-go-mt-0">
-                      <li class="cookie-go-list-group-item">
-                        <span class="cookie-go-h6 cookie-go-m-0 cookie-go-font-bold">Necessary
-                            <label class="cookie-go-float-right">
-                                <p class="cookie-go-m-0 color-blue">Always Active</p>
-                            </label>
-                        </span>                               
-                        <p class="cookie-go-mb-0">Necessary cookies are required to help a website usable by enabling core functions and access to secure areas of the website. The website cannot be function properly without these cookies and they are enabled by default and cannot be disabled. </p>
-                      </li>
-                      <li class="cookie-go-list-group-item">
-                        <span class="cookie-go-h6 cookie-go-m-0 cookie-go-font-bold">Analytics
-                            <label class="cookie-go-switch cookie-go-float-right">
-                                <input type="checkbox" id="analytics" class="analytics">
-                                <span class="cookie-go-slider cookie-go-round"></span>
-                            </label>       
-                        </span>   
-                        <p class="cookie-go-mb-0">
-                            Analytics cookies help website to understand how visitors interact through the website. These cookies help to improve user experiences by collecting and reporting information.
-                        </p>
-                      </li>
-                      <li class="cookie-go-list-group-item">
-                        <span class="cookie-go-h6 cookie-go-m-0 cookie-go-font-bold">Marketing
-                            <label class="cookie-go-switch cookie-go-float-right">
-                                <input type="checkbox" id="marketing" class="marketing">
-                                <span class="cookie-go-slider cookie-go-round"></span>
-                            </label>       
-                        </span>   
-                        <p class="cookie-go-mb-0">
-                            Marketing cookies are used to track visitors across websites to display relevant advertisements for the individual user and thereby more valuable for publishers and third party advertisers. 
-                        </p>
-                      </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="cookie-go-modal-footer" style="padding-top: 0px; padding-bottom: 20px;">
-                <button type="button" id="cookie-go-confirm-my-choices" class="cookie-go-btn cookie-go-btn-primary cookie-go-font-bold">Confirm My Choices</button>
-            </div>
-        </div>
-    </div>
-</div>
-</div>`
-
 var consentUrl = 'https://www.cookie.makewell.co.th'
-
 !(function () {
 
     document.head.innerHTML += '<link rel="stylesheet" href="https://www.cookie.makewell.co.th/libs/cookie-go.min.css" type="text/css" />'
     var div = document.createElement('div');
-    div.innerHTML = html;
+    div.innerHTML = `<div class="cookie-go-main" id="cookie-go" style="display: none;"> <div class="cookie-go-position" style="transform: translateY(0px);"> <div class="cookie-go-border"> <div class="cookie-go-content"> <div> <div class="cookie-go-font-bold">We use cookies</div> <div>We use cookies to improve your experience and performance on our website. You can manage your preferences by clicking "Change Preferences".</div> <div class="cookie-go-float-right"> <a id="cookie-go-consent" href="#" style="margin-right: 10px" class="cookie-go-font-bold cookie-go-link-blue">Change Preferences</a> <button id="cookie-go-accept-all-main" type="button" class="cookie-go-btn cookie-go-btn-primary cookie-go-font-bold">Accept All</button> </div> </div> </div> </div> </div> <div class="cookie-go-modal cookie-go-fade" style="display: none;" id="cookie-go-privacy" tabindex="-1" role="dialog" aria-labelledby="privacyLabel" aria-hidden="true"> <div class="cookie-go-modal-dialog cookie-go-modal-lg" role="document"> <div class="cookie-go-modal-content"> <div class="cookie-go-modal-header" style="padding-bottom: 10px;"> <div class="cookie-go-modal-title cookie-go-mt-2"> <span class="cookie-go-h5 cookie-go-font-bold">Privacy Preference <button type="button" id="cookie-go-accept-all" class="cookie-go-btn cookie-go-btn-primary cookie-go-ml-3 font-bold">Accept All</button></span> </div> <button type="button" class="cookie-go-close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button> </div> <div class="cookie-go-modal-body"> <div class="cookie-go-card"> <ul class="cookie-go-list-group cookie-go-list-group-flush cookie-go-mt-0"> <li class="cookie-go-list-group-item"> <span class="cookie-go-h6 cookie-go-m-0 cookie-go-font-bold">Necessary <label class="cookie-go-float-right"> <p class="cookie-go-m-0 color-blue">Always Active</p> </label> </span> <p class="cookie-go-mb-0">Necessary cookies are required to help a website usable by enabling core functions and access to secure areas of the website. The website cannot be function properly without these cookies and they are enabled by default and cannot be disabled. </p> </li> <li class="cookie-go-list-group-item"> <span class="cookie-go-h6 cookie-go-m-0 cookie-go-font-bold">Analytics <label class="cookie-go-switch cookie-go-float-right"> <input type="checkbox" id="analytics" class="analytics"> <span class="cookie-go-slider cookie-go-round"></span> </label> </span> <p class="cookie-go-mb-0"> Analytics cookies help website to understand how visitors interact through the website. These cookies help to improve user experiences by collecting and reporting information. </p> </li> <li class="cookie-go-list-group-item"> <span class="cookie-go-h6 cookie-go-m-0 cookie-go-font-bold">Marketing <label class="cookie-go-switch cookie-go-float-right"> <input type="checkbox" id="marketing" class="marketing"> <span class="cookie-go-slider cookie-go-round"></span> </label> </span> <p class="cookie-go-mb-0"> Marketing cookies are used to track visitors across websites to display relevant advertisements for the individual user and thereby more valuable for publishers and third party advertisers. </p> </li> </ul> </div> </div> <div class="cookie-go-modal-footer" style="padding-top: 0px; padding-bottom: 20px;"> <button type="button" id="cookie-go-confirm-my-choices" class="cookie-go-btn cookie-go-btn-primary cookie-go-font-bold">Confirm My Choices</button> </div> </div> </div> </div> </div>`;
     document.body.appendChild(div);
 
     const dataKey = document.currentScript.getAttribute('data-key');
